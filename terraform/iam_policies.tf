@@ -174,7 +174,8 @@ resource "aws_iam_role_policy" "iam_policies" {
           "iam:ListInstanceProfilesForRole",
           "iam:DeleteRole",
           "iam:TagRole",
-          "iam:ListAttachedUserPolicies"
+          "iam:ListAttachedUserPolicies",
+          "iam:UpdateAssumeRolePolicy"
         ],
         Effect   = "Allow",
         Resource = "*"
