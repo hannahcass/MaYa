@@ -9,3 +9,5 @@ terraform.rc
 terraform-provider-*
 **/.terraform/*
 terraform/builds/*
+terraform/.terraform.lock.hcl
+scripts/scripts/lambda/api-caller/src/api_caller/app.py
