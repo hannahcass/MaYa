@@ -1,0 +1,21 @@
+[MESSAGES CONTROL]
+disable=
+    import-error,
+    missing-docstring,
+    duplicate-code,
+    protected-access,
+    line-too-long,
+    no-else-return,
+    wrong-import-order, # isort ...
+    redefined-outer-name,
+    redefined-builtin,
+    use-dict-literal,
+    import-outside-toplevel,
+    too-many-lines,
+    raise-missing-from,
+
+[FORMAT]
+max-line-length=127
+
+[DESIGN]
+max-args=10

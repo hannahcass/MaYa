@@ -1,0 +1,11 @@
+*.tfstate
+*.tfstate.*
+*.log
+*.tfvars
+*.tfplan
+.terraformrc
+terraform.rc
+.terraform/
+terraform-provider-*
+**/.terraform/*
+terraform/builds/*
