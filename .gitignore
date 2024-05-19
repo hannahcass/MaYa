@@ -10,5 +10,5 @@ terraform-provider-*
 **/.terraform/*
 terraform/builds/*
 terraform/.terraform.lock.hcl
-scripts/scripts/lambda/api-caller/src/api_caller/app.py
+scripts/lambda/api-caller/src/api_caller/app.py
 scripts/glue/recommender/src/recommender/recommender.py
