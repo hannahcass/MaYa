@@ -34,3 +34,21 @@ resource "aws_iam_role" "s3_role" {
     ]
   })
 }
+
+resource "aws_iam_role" "master_role" {
+  name = "master_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    "Statement" : [
+      {
+        "Sid" : "",
+        "Effect" : "Allow",
+        "Principal" : {
+          "AWS" : "arn:aws:iam::471112978822:user/hannah"
+        },
+        "Action" : "sts:AssumeRole"
+      }
+    ]
+  })
+}
