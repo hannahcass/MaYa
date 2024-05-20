@@ -1,6 +1,6 @@
 # MaYa
 
-# WIP - Terraform sandbox
+### WIP - Terraform sandbox
 
 - [x] Lambda for API call
 - [x] S3
