@@ -34,11 +34,11 @@ variable "timeout" {
   default     = 20
 }
 
-variable "max_capacity" {
-  description = "(Optional) The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs"
-  type        = number
-  default     = 2
-}
+# variable "max_capacity" {
+#   description = "(Optional) The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs"
+#   type        = number
+#   default     = 2
+# }
 
 variable "worker_type" {
   description = "(Optional) The type of predefined worker that is allocated when a job runs"
@@ -96,17 +96,6 @@ variable "max_concurrent_runs" {
   description = "(Optional) The maximum number of concurrent runs allowed for a job. The default is 1."
   type        = number
   default     = 1
-}
-
-variable "python_version" {
-  description = "(Optional) The Python version being used to execute a Python shell job. Allowed values are 2 or 3."
-  type        = string
-  default     = "3.12"
-
-  validation {
-    condition     = contains(["3.7", "3.10", "3.12"], var.python_version)
-    error_message = "Allowed value is 3.7, 3.10, 3.12."
-  }
 }
 
 variable "glue_version" {
@@ -178,4 +167,15 @@ variable "additional_python_modules" {
   description = "(Optional) List of Python modules to add a new module or change the version of an existing module."
   type        = list(string)
   default     = []
+}
+
+variable "python_version" {
+  description = "(Optional) The Python version being used to execute a Python shell job."
+  type        = string
+  default     = "3"
+
+  validation {
+    condition     = contains(["2", "3"], var.python_version)
+    error_message = "Allowed value is 2, 3."
+  }
 }

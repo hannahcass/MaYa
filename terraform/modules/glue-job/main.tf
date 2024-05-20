@@ -4,7 +4,6 @@ resource "aws_glue_job" "glue_job" {
   description            = var.description
   glue_version           = var.glue_version
   timeout                = var.timeout
-  max_capacity           = var.max_capacity
   worker_type            = var.worker_type
   number_of_workers      = var.number_of_workers
   security_configuration = var.security_configuration
