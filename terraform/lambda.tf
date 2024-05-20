@@ -1,4 +1,7 @@
 locals {
+  eventbridge_arns = ["arn:aws:events:eu-central-1:471112978822:rule/api-caller-scheduler"]
+
+
   lambda_function_definitions = {
     api-caller = {
       create             = true
@@ -56,9 +59,10 @@ resource "aws_lambda_alias" "api-caller-alias" {
 }
 
 resource "aws_lambda_permission" "from_eventbridge" {
-  statement_id  = "EventBridgePermission"
+  for_each      = { for idx, arn in local.eventbridge_arns : idx => arn }
+  statement_id  = "EventBridgePermission-${each.key}"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_alias.api-caller-alias.arn
   principal     = "events.amazonaws.com"
-  source_arn    = module.eventbridge["api-caller-scheduler"].eventbridge_rule_arns["crons"]
+  source_arn    = each.value
 }
