@@ -42,6 +42,31 @@ resource "aws_iam_role_policy" "s3_role_policy" {
 
 }
 
+resource "aws_iam_role_policy" "glue_job_role_policy" {
+  name = "glue_job_role_policy"
+  role = aws_iam_role.glue_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = [
+          "glue:GetJobs",
+          "glue:StartJobRun",
+          "glue:GetJobRun",
+          "glue:ListJobs",
+          "glue:GetJobRuns",
+          "glue:GetJob",
+          "glue:CreateSession",
+          "glue:GetSession",
+          "glue:RunStatement",
+          "glue:GetStatement"
+        ]
+        Effect   = "Allow",
+        Resource = "*"
+  }] })
+}
+
 resource "aws_iam_role_policy" "cloudwatch_policies" {
   name = "cloudwatch_policies"
   role = aws_iam_role.master_role.id
