@@ -15,3 +15,6 @@
 - [ ] Add SNS
 - [ ] Step functions -> child step functions
 - [ ] API Gateway
+
+
+- [ ] Wrap all in Terragrunt
