@@ -13,5 +13,5 @@
 - [x] IAM roles
 - [ ] Add DynamoDB
 - [ ] Add SNS
-- [ ] Step functions -> child step stones
+- [ ] Step functions -> child step functions
 - [ ] API Gateway
