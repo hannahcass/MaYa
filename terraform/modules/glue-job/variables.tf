@@ -115,7 +115,7 @@ variable "glue_version" {
   default     = "3.0"
 
   validation {
-    condition     = contains(["3.0", "4.0"], var.python_version)
+    condition     = contains(["3.0", "4.0"], var.glue_version)
     error_message = "Allowed value is 3.0, 4.0."
   }
 }
