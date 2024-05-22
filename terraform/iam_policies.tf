@@ -67,6 +67,27 @@ resource "aws_iam_role_policy" "glue_job_role_policy" {
   }] })
 }
 
+resource "aws_iam_role_policy" "dynamodb_role_policy" {
+  name = "dynamodb_role_policy"
+  role = aws_iam_role.dynamodb_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = [
+          "dynamodb:PutItem",
+          "dynamodb:GetItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:ListTables"
+        ],
+        Effect   = "Allow",
+        Resource = "*"
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role_policy" "cloudwatch_policies" {
   name = "cloudwatch_policies"
   role = aws_iam_role.master_role.id
