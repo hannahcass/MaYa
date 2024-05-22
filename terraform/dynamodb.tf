@@ -17,7 +17,7 @@ locals {
 module "dynamodb_table" {
   source   = "terraform-aws-modules/dynamodb-table/aws"
   version  = "4.0.1"
-  for_each = "local.dynamodb_table_definition"
+  for_each = local.dynamodb_table_definition
 
   name                        = each.value.name
   create_table                = lookup(each.value, "create_table", false)
