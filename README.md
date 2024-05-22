@@ -11,7 +11,7 @@
 - [x] Cloudwatch logs
 - [x] IAM policies
 - [x] IAM roles
-- [ ] Add DynamoDB
+- [x] Add DynamoDB
 - [ ] Add SNS
 - [ ] Step functions -> child step functions
 - [ ] API Gateway
