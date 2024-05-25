@@ -14,7 +14,7 @@
 - [x] Add DynamoDB
 - [ ] Add SNS
 - [ ] Step functions -> child step functions
-- [ ] API Gateway
+- [x] API Gateway -> test case for Terraformer
 
 
 - [ ] Wrap all in Terragrunt
