@@ -12,3 +12,4 @@ terraform/builds/*
 terraform/.terraform.lock.hcl
 scripts/lambda/api-caller/src/api_caller/app.py
 scripts/glue/recommender/src/recommender/recommender.py
+terraform-aws-import/.terraform.lock.hcl
