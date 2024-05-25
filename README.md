@@ -1,6 +1,6 @@
 # MaYa
 
-### WIP - Terraform sandbox
+### Terraform sandbox
 
 - [x] Lambda for API call
 - [x] S3
@@ -12,7 +12,7 @@
 - [x] IAM policies
 - [x] IAM roles
 - [x] Add DynamoDB
-- [ ] Add SNS
+- [x] Add SNS
 - [ ] Step functions -> child step functions
 - [x] API Gateway -> test case for Terraformer
 
