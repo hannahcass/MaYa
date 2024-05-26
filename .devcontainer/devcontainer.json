@@ -1,0 +1,89 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "hostRequirements": {
+        "memory": "8gb"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {},
+        "ghcr.io/devcontainers-contrib/features/terraformer:1": {},
+        "ghcr.io/devcontainers-contrib/features/terragrunt:1": {}
+    },
+    "remoteUser": "vscode",
+    "containerUser": "vscode",
+    "mounts": [
+        {
+            "source": "${localEnv:HOME}/.cache/pip",
+            "target": "/home/vscode/.cache/pip",
+            "type": "bind"
+        }
+    ],
+    "containerEnv": {
+        "PROMPT_COMMAND": "history -a",
+        "AWS_DEFAULT_REGION": "eu-central-1"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "update.showReleaseNotes": false,
+                "workbench.welcomePage.walkthroughs.openOnInstall": false,
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "flake8.args": [
+                    "--config=.github/linters/.flake8"
+                ],
+                "black-formatter.args": [
+                    "--config=.github/linters/.python-black"
+                ],
+                "pylint.args": [
+                    "--rcfile=.github/linters/.python-lint"
+                ],
+                "files.associations": {
+                    ".python-lint": "ini"
+                },
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "isort.args": [
+                    "--settings-path",
+                    ".github/linters/.isort.cfg"
+                ],
+                "editor.formatOnSave": true,
+                "editor.detectIndentation": false,
+                "files.insertFinalNewline": true,
+                "git.autofetch": true,
+                "git.confirmSync": false,
+                "git.enableSmartCommit": true,
+                "git.useEditorAsCommitInput": false,
+                "python.testing.pytestEnabled": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "ms-python.vscode-pylance",
+                "ms-python.flake8",
+                "matangover.mypy",
+                "GitHub.vscode-pull-request-github",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.jupyter-keymap",
+                //"eamodio.gitlens",
+                "Gydunhn.vsc-essentials",
+                "github.vscode-github-actions",
+                "redhat.vscode-yaml",
+                //"AmazonWebServices.aws-toolkit-vscode",
+                "GitHub.copilot-chat",
+                "ms-python.pylint",
+                "hashicorp.terraform",
+                "matheusq94.tfs"
+            ]
+        }
+    },
+    "initializeCommand": "mkdir -p ${localEnv:HOME}/.cache/pip || :"
+}
