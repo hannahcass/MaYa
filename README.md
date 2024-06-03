@@ -15,6 +15,7 @@
 - [x] Add SNS
 - [ ] Step functions -> child step functions
 - [x] API Gateway -> test case for Terraformer
+- [ ] Write HCL tests for custom modules: unit tests, mocks
 
 
 - [ ] Wrap all in Terragrunt
